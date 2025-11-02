@@ -17,7 +17,7 @@ In these cases, I want the function to throw an error. In the code block
 below, you can find the description and function code.
 
 ``` r
-#'@title Find Parity of Integer
+#'@title Parity of Integers
 #'
 #'@description This function finds the parity (even or odd) of a given integer value or a numerical vector that contains only integers
 #'
@@ -32,9 +32,9 @@ parity <- function(x) {
   if(!is.numeric(x)){
       stop("x must be a numerical vector that contains only integers") 
     }
-  #checking if all values in x are integers
+  #checking if all values in x are integers and throw an error
   if(suppressWarnings(all(x%% 1 != 0,na.rm = TRUE))){
-      stop("x must be a vector of length greater than 0 that contains only integers") #throw this error message and stop the function
+      stop("x must be a vector of length greater than 0 that contains only integers")
     }
   for(i in 1:length(x)){
     if(is.na(x[i])){
@@ -134,7 +134,7 @@ test_that("parity_run",{
 })
 ```
 
-    ## Test passed 🎉
+    ## Test passed 🥇
 
 ``` r
 #Testing the values that should cause errors
@@ -145,6 +145,6 @@ test_that("parity_errors",{
 })
 ```
 
-    ## Test passed 🎉
+    ## Test passed 😀
 
 All the formal tests passed!

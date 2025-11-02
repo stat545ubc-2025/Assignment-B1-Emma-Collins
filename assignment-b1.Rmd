@@ -14,7 +14,7 @@ library(testthat)
 In this exercise, I will create the function parity() that takes in a numerical integer and returns odd or even based on the parity of the integer. This can be done by looking at the remainder when dividing the value by 2. If the remainder is 0 then the value is even and otherwise the value is odd. One consideration for this function is what should occur if *NA* values are input into the function. When this occurs I want my function to output *NA*. There are a few errors that I want to account for in this function. One error case is if the input is not a numeric and the other is if the numeric does not contain only integers. In these cases, I want the function to throw an error. In the code block below, you can find the description and function code.
 
 ```{r}
-#'@title Find Parity of Integer
+#'@title Parity of Integers
 #'
 #'@description This function finds the parity (even or odd) of a given integer value or a numerical vector that contains only integers
 #'
@@ -29,9 +29,9 @@ parity <- function(x) {
   if(!is.numeric(x)){
       stop("x must be a numerical vector that contains only integers") 
     }
-  #checking if all values in x are integers
+  #checking if all values in x are integers and throw an error
   if(suppressWarnings(all(x%% 1 != 0,na.rm = TRUE))){
-      stop("x must be a vector of length greater than 0 that contains only integers") #throw this error message and stop the function
+      stop("x must be a vector of length greater than 0 that contains only integers")
     }
   for(i in 1:length(x)){
     if(is.na(x[i])){
