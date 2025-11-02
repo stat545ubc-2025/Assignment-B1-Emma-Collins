@@ -1,4 +1,4 @@
-# STAT 545B - Assignment 1 📊
+# STAT 545B - Assignment 1 📃 
 *Last Updated: 2025-11-02*
 
 ## Project Aim
