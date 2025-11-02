@@ -2,7 +2,7 @@
 *Last Updated: 2025-11-02*
 
 ## Project Aim
-This repository contains relevent documents and code for the Assignment B1 done by Emma Collins for the STAT545B class. This project aims to create a simple function in R with documentation, examples and formal tests.
+This repository contains relevant documents and code for the Assignment B1 done by Emma Collins for the STAT545B class. This project aims to create a simple function in R with documentation, examples and formal tests.
 
 ## Documents Overview
 Document Name | Purpose 
