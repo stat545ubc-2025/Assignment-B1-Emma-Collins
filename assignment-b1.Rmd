@@ -1,7 +1,7 @@
 ---
 title: "Assignment B1"
-author: "Emma"
-output: html_document
+author: "Emma Collins"
+output: github_document
 ---
 
 ```{r setup, include=FALSE}
@@ -11,7 +11,7 @@ library(testthat)
 
 ## Exercise 1 and 2
 
-In this exercise, I will create the function parity() that takes in a numerical integer and returns odd or even based on the parity of the integer. This can be done by looking at the remainder when dividing the value by 2. If the remainder is 0 then the value is even and otherwise the value is odd. One consideration for this function is what should occur if *NA* is input into the function. When this occurs I want my function to output *NA*. There are a few errors that I want to account for in this function. One error case is if the input is not a numeric and the other is if the numeric does not contain only integers. In these cases, I want the function to throw an error.
+In this exercise, I will create the function parity() that takes in a numerical integer and returns odd or even based on the parity of the integer. This can be done by looking at the remainder when dividing the value by 2. If the remainder is 0 then the value is even and otherwise the value is odd. One consideration for this function is what should occur if *NA* values are input into the function. When this occurs I want my function to output *NA*. There are a few errors that I want to account for in this function. One error case is if the input is not a numeric and the other is if the numeric does not contain only integers. In these cases, I want the function to throw an error. In the code block below, you can find the description and function code.
 
 ```{r}
 #'@title Find Parity of Integer
@@ -48,7 +48,7 @@ parity <- function(x) {
 
 ## Exercise 3
 
-In this portion of the assignment I will include some examples uses of the function parity(). In the following code block we will look at three simple examples. One containing one singular positive integer value and the other example containing a vector of a few positive integers and 0. The last example will use the parity function on a vector that contains negative and positive integers (to demonstrate that it still works with negative integers).
+In this portion of the assignment, I will include some examples uses of the *parity* function. In the following code block, we will look at three simple examples. One containing one singular positive integer value and the other example containing a vector of a few positive integers and 0. The last example will use the parity function on a vector that contains negative and positive integers (to demonstrate that it still works with negative integers).
 
 ```{r}
 parity(1509)
@@ -76,7 +76,7 @@ parity(numeric(0))
 
 ## Exercise 4
 
-In this exercise the *testthat* package will be used to make formal tests of the function. A few tests that I will include are a singular integer value, a numeric vector of integers, a vector that includes *NA* values, a numeric of length 0 and a character vector. The last two test should throw errors.
+In this exercise, the *testthat* package will be used to make formal tests of the function. A few tests that I will include are a singular integer value, a numeric vector of integers, a vector that includes *NA* values, a numeric of length 0 and a character vector. The last two test should throw errors.
 
 ```{r}
 #testing values that should run
