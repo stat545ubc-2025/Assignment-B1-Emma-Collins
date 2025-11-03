@@ -21,26 +21,26 @@ below, you can find the description and function code.
 #'
 #'@description This function finds the parity (even or odd) of a given integer value or a numerical vector that contains only integers
 #'
-#'@param x integer, vector
+#'@param int_vec integer, vector. I chose int_vec as the name of the argument as the input can be a vector of size greater than 0 that contains integer values
 #'@returns character, vector containing even or odd depending on the parity of the input
 #'
 #'@example parity(12)
 #'@example parity(c(-5,2,4,7))
-parity <- function(x) {
-  output<- rep(NA, length(x))
-  #throw this error message and stop the function if x is not a numerical vector
-  if(!is.numeric(x)){
-      stop("x must be a numerical vector that contains only integers") 
+parity <- function(int_vec) {
+  output<- rep(NA, length(int_vec))
+  #throw this error message and stop the function if int_vec is not a numerical vector
+  if(!is.numeric(int_vec)){
+      stop("int_vec must be a numerical vector that contains only integers") 
     }
-  #checking if all values in x are integers and throw an error
-  if(suppressWarnings(all(x%% 1 != 0,na.rm = TRUE))){
-      stop("x must be a vector of length greater than 0 that contains only integers")
+  #checking if all values in int_vec are integers and throw an error
+  if(suppressWarnings(all(int_vec%% 1 != 0,na.rm = TRUE))){
+      stop("int_vec must be a vector of length greater than 0 that contains only integers")
     }
-  for(i in 1:length(x)){
-    if(is.na(x[i])){
+  for(i in 1:length(int_vec)){
+    if(is.na(int_vec[i])){
       output[i] = NA
     }
-    else if(x[i] %% 2 == 0){
+    else if(int_vec[i] %% 2 == 0){
     output[i] = "even"
     }
     else{output[i] = "odd"}
@@ -97,7 +97,7 @@ output if the in put is a numeric that contains only integers.
 parity(c("12","hello","this should fail"))
 ```
 
-    ## Error in parity(c("12", "hello", "this should fail")): x must be a numerical vector that contains only integers
+    ## Error in parity(c("12", "hello", "this should fail")): int_vec must be a numerical vector that contains only integers
 
 Two other possible errors are if the numeric contains values that are
 not integers and if the numeric is of length 0. In the code block below,
@@ -109,13 +109,13 @@ values are input into the function and if the length of the numeric is
 parity(c(12.5,8.5,6.19))
 ```
 
-    ## Error in parity(c(12.5, 8.5, 6.19)): x must be a vector of length greater than 0 that contains only integers
+    ## Error in parity(c(12.5, 8.5, 6.19)): int_vec must be a vector of length greater than 0 that contains only integers
 
 ``` r
 parity(numeric(0))
 ```
 
-    ## Error in parity(numeric(0)): x must be a vector of length greater than 0 that contains only integers
+    ## Error in parity(numeric(0)): int_vec must be a vector of length greater than 0 that contains only integers
 
 ## Exercise 4
 
@@ -134,7 +134,7 @@ test_that("parity_run",{
 })
 ```
 
-    ## Test passed 🥇
+    ## Test passed 🌈
 
 ``` r
 #Testing the values that should cause errors
@@ -145,6 +145,6 @@ test_that("parity_errors",{
 })
 ```
 
-    ## Test passed 😀
+    ## Test passed 🥇
 
 All the formal tests passed!
